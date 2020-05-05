@@ -50,11 +50,13 @@ public class ConsumidorFila {
 			}
 		});
 
-		//new Scanner(System.in).nextLine(); // usado somente para esperar uma tecla ser pressionada
+		// new Scanner(System.in).nextLine(); // usado somente para esperar uma tecla ser pressionada
 
 		session.close();
 		connection.close();
 		context.close();
+		
+		System.out.println("end consumer.");
 	}
 
 }

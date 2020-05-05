@@ -51,6 +51,8 @@ public class MonitoramentoFila {
 		session.close();
 		connection.close();
 		context.close();
+		
+		System.out.println("end.");
 	}
 
 }
