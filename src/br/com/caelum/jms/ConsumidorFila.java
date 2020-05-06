@@ -5,10 +5,9 @@ import java.util.Properties;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
-import javax.jms.JMSException;
+import javax.jms.Message;
 import javax.jms.MessageConsumer;
 import javax.jms.Session;
-import javax.jms.TextMessage;
 import javax.naming.InitialContext;
 
 public class ConsumidorFila {
@@ -39,8 +38,9 @@ public class ConsumidorFila {
 
 		MessageConsumer consumer = session.createConsumer(fila);
 
-		// Message message = consumer.receive(); // este metodo e usado para receber somente uma mensagem
+		Message message = consumer.receive(); // este metodo e usado para receber somente uma mensagem
 
+		/*
 		consumer.setMessageListener((m) -> {
 			try {
 				TextMessage textMessage = (TextMessage) m;
@@ -49,6 +49,9 @@ public class ConsumidorFila {
 				e.printStackTrace();
 			}
 		});
+		*/
+		
+		System.out.println(message);
 
 		// new Scanner(System.in).nextLine(); // usado somente para esperar uma tecla ser pressionada
 
